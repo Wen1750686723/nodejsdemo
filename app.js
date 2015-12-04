@@ -10,6 +10,7 @@ var multer  = require('multer');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var index1 = require('./routes/index1');
+var login = require('./routes/login');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +30,7 @@ app.use(multer({ dest: '/tmp/'}).array('image'));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/index1',index1);
+app.use('/login',login);
 app.get('/list_user', function (req, res) {
    console.log("/list_user GET 请求");
    //res.send('用户列表页面');
